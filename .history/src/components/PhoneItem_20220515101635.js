@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ADD_SHOPPING_CARD, SHOW_DETAIL } from "../utils/constant";
 const mapDispatchToProps = (dispatch) => {
   return {
     detail: (item) => {
       dispatch({
-        type: SHOW_DETAIL,
+        type: "SHOW_DETAIL",
         item,
       });
     },
     shopCardItem: (item) => {
       dispatch({
-        type: ADD_SHOPPING_CARD,
+        type: "ADD_SHOPPING_CARD",
         item,
       });
     },
@@ -24,12 +23,14 @@ const mapStatusToProps = (state) => {
 };
 
 class PhoneItem extends Component {
+  cons;
   render() {
     const [product] = this.props.product;
     return (
       <>
         {product.length > 0 &&
           product.map((item) => {
+            console.log(item);
             const { hinhAnh, tenSP } = item;
             return (
               <div
@@ -42,13 +43,13 @@ class PhoneItem extends Component {
                   <h5 className="text-2xl font-semibold card-title">{tenSP}</h5>
 
                   <button
-                    onClick={() => this.props.detail(item)}
+                    onClick={() => this.props.detail(this.props.item)}
                     className="mr-3 btn btn-primary"
                   >
                     Xem chi tiet
                   </button>
                   <button
-                    onClick={() => this.props.shopCardItem(item)}
+                    onClick={() => this.props.shopCardItem(this.props.item)}
                     className="btn btn-danger"
                   >
                     Them vao gio hang{" "}

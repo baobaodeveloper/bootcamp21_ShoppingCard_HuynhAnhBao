@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ADD_SHOPPING_CARD, SHOW_DETAIL } from "../utils/constant";
+import { SHOW_DETAIL } from "../utils/constant";
 const mapDispatchToProps = (dispatch) => {
   return {
     detail: (item) => {
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     shopCardItem: (item) => {
       dispatch({
-        type: ADD_SHOPPING_CARD,
+        type: "ADD_SHOPPING_CARD",
         item,
       });
     },

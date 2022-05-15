@@ -6,6 +6,9 @@ const mapStateToProps = (state) => {
 };
 class PhoneDetail extends Component {
   render() {
+    console.log(this.props.detail);
+    // const productDetail = this.props.detail;
+
     const {
       hinhAnh,
       tenSP,

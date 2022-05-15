@@ -1,10 +1,4 @@
-import {
-  ADD_SHOPPING_CARD,
-  DELETE_ITEM,
-  QUALITY_PHONE_ITEM_DECREA,
-  QUALITY_PHONE_ITEM_INCREA,
-  SHOW_DETAIL,
-} from "../utils/constant";
+import { DELETE_ITEM, QUALITY_PHONE_ITEM_INCREA } from "../utils/constant";
 
 const initialState = {
   product: [
@@ -83,7 +77,7 @@ const phoneReducer = (state = initialState, action) => {
 
       return { ...state };
 
-    case QUALITY_PHONE_ITEM_DECREA:
+    case "QUALITY_PHONE_ITEM_DECREA":
       const newShopCardDeCreaQty = [...state.shopCardItem];
       const indexDecrea = newShopCardDeCreaQty.findIndex(
         (item) => item.maSP === action.item.maSP
@@ -94,7 +88,7 @@ const phoneReducer = (state = initialState, action) => {
       state.shopCardItem = newShopCardDeCreaQty;
 
       return { ...state };
-    case ADD_SHOPPING_CARD:
+    case "ADD_SHOPPING_CARD":
       let newShopCard = [...state.shopCardItem];
       const indexItem = newShopCard.findIndex(
         (item) => item.maSP === action.item.maSP
@@ -107,7 +101,7 @@ const phoneReducer = (state = initialState, action) => {
       }
       state.shopCardItem = newShopCard;
       return { ...state };
-    case SHOW_DETAIL:
+    case "SHOW_DETAIL":
       state.detail = action.item;
 
       return { ...state };

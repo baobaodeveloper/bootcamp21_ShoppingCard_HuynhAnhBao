@@ -6,6 +6,8 @@ const mapStateToProps = (state) => {
 };
 class PhoneDetail extends Component {
   render() {
+    const productDetail = this.props.detail;
+    if (productDetail.length < 0) return;
     const {
       hinhAnh,
       tenSP,

@@ -4,12 +4,19 @@ import PhoneDetail from "./PhoneDetail";
 import PhoneItem from "./PhoneItem";
 import PhoneShoppingCard from "./PhoneShoppingCard";
 
-export default class PhoneList extends Component {
+const mapStateToProps = (state) => {
+  return {
+    shopCardItem: state.phoneReducer.shopCardItem,
+  };
+};
+class PhoneList extends Component {
   render() {
+    const shopCardItem = this.props.shopCardItem;
+
     return (
       <Fragment>
         <div className="container mt-4">
-          <PhoneShoppingCard></PhoneShoppingCard>
+          <PhoneShoppingCard shopCardItem={shopCardItem}></PhoneShoppingCard>
 
           <div className="row flex-nowrap">
             <PhoneItem></PhoneItem>
@@ -20,3 +27,4 @@ export default class PhoneList extends Component {
     );
   }
 }
+export default connect(mapStateToProps, null)(PhoneList);

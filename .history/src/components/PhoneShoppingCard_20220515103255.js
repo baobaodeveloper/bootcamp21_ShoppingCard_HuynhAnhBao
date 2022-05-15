@@ -1,28 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  DELETE_ITEM,
-  QUALITY_PHONE_ITEM_DECREA,
-  QUALITY_PHONE_ITEM_INCREA,
-} from "../utils/constant";
 
 const mapDispatchToProps = (dispatch) => {
   return {
     itemChangeIncrea: (item) => {
       dispatch({
-        type: QUALITY_PHONE_ITEM_INCREA,
+        type: "QUALITY_PHONE_ITEM_INCREA",
         item,
       });
     },
     itemChangeDecrea: (item) => {
       dispatch({
-        type: QUALITY_PHONE_ITEM_DECREA,
+        type: "QUALITY_PHONE_ITEM_DECREA",
         item,
       });
     },
     deleteItem: (item) => {
       dispatch({
-        type: DELETE_ITEM,
+        type: "DELETE_ITEM",
         item,
       });
     },

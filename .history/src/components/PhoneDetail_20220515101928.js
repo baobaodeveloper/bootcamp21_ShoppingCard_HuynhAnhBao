@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   return { detail: state.phoneReducer.detail };
 };
 class PhoneDetail extends Component {
   render() {
+    console.log(this.props.detail);
     const {
       hinhAnh,
       tenSP,
@@ -68,4 +68,4 @@ class PhoneDetail extends Component {
   }
 }
 
-export default connect(mapStateToProps, null)(PhoneDetail);
+export default PhoneDetail;
