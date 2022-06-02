@@ -40,7 +40,7 @@ const PhoneItemHook = () => {
                   }
                   className="btn btn-danger"
                 >
-                  Them vao gio hang{" "}
+                  Them vao gio hang
                 </button>
               </div>
             </div>

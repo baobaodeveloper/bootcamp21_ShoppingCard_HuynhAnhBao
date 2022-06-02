@@ -98,8 +98,9 @@ const phoneReducer = (state = initialState, action) => {
       const indexItem = newShopCard.findIndex(
         (item) => item.maSP === action.payload.maSP
       );
-      action.payload.qty = quality;
+
       if (indexItem === -1) {
+        action.payload.qty = quality;
         newShopCard.push(action.payload);
       } else {
         newShopCard[indexItem].qty += 1;

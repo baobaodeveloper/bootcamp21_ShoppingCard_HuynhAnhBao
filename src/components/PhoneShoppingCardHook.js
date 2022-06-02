@@ -137,7 +137,7 @@ const PhoneShoppingCardHook = () => {
           />
         </svg>
         <span className="absolute inline-block top-0 right-0 translate-x-8 -translate-y-3 text-sm border-2 p-[5px] rounded-full leading-none text-white bg-red-600">
-          {itemCard.length}
+          {itemCard.reduce((acc, item) => acc + item.qty, 0)}
         </span>
       </div>
     </div>
